@@ -1,0 +1,27 @@
+###GP1_MCMV group report
+
+##Differences between Galaxy and command line steps: 
+
+#Steps in web-based server:
+•	Uploading each fastaq file and executing them.
+
+#Steps in command line:
+•	Accessing ASC and transferring the data. Submit each job to the DMC queue. Install FastQC software. Run software on each file.
+We found Galaxy more user friendly thanks to their color code and because we had a small number of samples. ASC is probably more practical if you can write a program to loop and analyze all the files.
+
+##Samples coverage:
+
+WT			380-1640 (Lea)
+WTD611 		284-1223 (Aaron)
+WTD611R 		284-1223 (Aaron)
+RHWT			1434 (Devi, Huachen and Ela)	
+RHWTD611		1241 (Devi, Huachen and Ela)
+RHWTD611R		1218 (Devi, Huachen and Ela)
+(BAC			285-1640 (Lea)
+
+##Move forward or continuing filtering?
+
+The “per base sequence quality” and “per sequence quality” scores were high, though we could think of trimming the 20 last bp. The “Per tile sequence quality” was mostly very acceptable, as for the “Per sequence quality score”, the “Per base N content”, and the “Adapter content”. The “Sequence length distribution was mostly high around 150bp, which means that the sample coverage was on the high end.
+We had consistent issue with the “per base sequence content” which quality was questionable in the first 20bp suggesting that we should trim them. In addition, the “Per sequence GC content” showed consistently a high peak or peaks which could indicate contamination, but the genome of MCMV is known to be rich in GC content. 
+Finally, the “sequence duplication levels” was consistently problematic with a peak of duplicated sequences around 10. We have not yet figured out the reason for this and we need to investigate further.
+Based on read quality and coverage we decided to move forward.
